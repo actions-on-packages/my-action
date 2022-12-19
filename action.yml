@@ -1,0 +1,21 @@
+name: "Composite action"
+description: "Build a container image and Pushes it to Docker registry"
+
+
+runs:
+  using: "composite"
+  steps:
+      - name: Checking out!
+        uses: actions/checkout@v3
+  
+      - name: Hello World
+        uses: actions-on-packages/typescript-action@1.4.18
+        with:
+          milliseconds: 1000
+          
+      - name: Echo 
+        run: |
+            echo "This is after the hello world action step"
+        shell: bash
+      
+      
